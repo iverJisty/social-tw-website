@@ -76,6 +76,26 @@ const _schema = [
             ['status', 'Int'],
         ],
     },
+    {
+        name: 'Comment',
+        rows: [
+            {
+                name: 'publishedAt',
+                type: 'Int',
+                default: () => +new Date(),
+            },
+            ['commentId', 'String'],
+            ['postId', 'String'],
+            ['transactionHash', 'String'],
+            ['content', 'String'],
+            ['cid', 'String'],
+            ['epoch', 'Int'],
+            ['epochKey', 'String'],
+            // status 0: haven't found the post on-chain
+            // status 1: found the post on-chain
+            ['status', 'Int'],
+        ],
+    },
 ]
 
 export default _schema
